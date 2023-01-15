@@ -7,7 +7,8 @@ import 'package:flutter_zipcode/data/zipcode.dart';
 StateProvider<String> zipcodeProvider = StateProvider((ref) => '');
 
 FutureProvider<Zipcode> zipcodeAPIProvider = FutureProvider((ref) async {
-  final zipcode = ref.watch(zipcodeProvider.notifier).state;
+  final zipcode = ref.watch(zipcodeProvider.state).state;
+  print('PROVIDER!!!!!!, $zipcode');
   if (zipcode.length != 7) {
     throw Exception('Zipcode must be 7 chars');
   }
