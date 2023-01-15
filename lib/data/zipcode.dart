@@ -13,6 +13,8 @@ class Zipcode with _$Zipcode {
 
   factory Zipcode.fromJson(Map<String, dynamic> json) =>
       _$ZipcodeFromJson(json);
+
+  static const empty = Zipcode(code: '', data: []);
 }
 
 @freezed
